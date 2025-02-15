@@ -2,96 +2,195 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <title>Timothy Kimutai - Resume</title>
     <style>
-        body {
+    body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 40px;
             color: #333;
             line-height: 1.6;
             background-color: #f5f7fa;
-        }
-        .container {
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background: #ffffff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+    h1 {
+        text-align: center;
+        color: #1a73e8;
+        margin-bottom: 20px;
+        
+    }
+    h2 {
+        border-bottom: 1px solid #1a73e8;
+        padding-bottom: 5px;
+        margin-top: 30px;
+        color: #444;
+    }
+     h3 {
+            margin-bottom: 5px;
+            color: #555;
+    }
+    p {
+        margin: 5px 0 15px 0;
+    }
+    li {
+        margin-bottom: 5px;
+        margin: 5%;
+        
+    }
+    
+    
+    ul {
+        list-style-type: square;
+        padding-left: 20px;
+    }
+    strong {
+        color: #1a73e6;
+    }
+    .header-info{
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    .header-info p {
+        margin: 5px 0;
+    }
+    .skills-section ul{
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+    .skills-section strong {
+        display: inline-block;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        text-decoration: underline;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid #ddd;
+        margin: 20px 0;
+    }
+    project-section{
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 800px;
-            margin: 50px auto;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        h1, h2, h3 {
-            color: #1a73e8;
-        }
-        h2 {
-            border-bottom: 2px solid #1a73e8;
-            padding-bottom: 5px;
-        }
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-        .header-info p {
-            margin: 5px 0;
-        }
-        hr {
-            border: 0;
-            border-top: 1px solid #ddd;
-            margin: 20px 0;
-        }
+            margin: auto;
+    }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Timothy Kimutai</h1>
-        <p style="text-align: center; font-weight: 400;">Data Scientist</p>
+        <h1 style="margin-bottom: 5px;">Timothy Kimutai</h1>
+        <p style="text-align: center; font-weight: 400; line-height: 1.2;">Data Scientist</p>
+
         <div class="header-info">
-            <p><strong>Email:</strong> timothykimtai@gmail.com</p>
-            <p><strong>Phone:</strong> (+254) 707-498-163</p>
-            <p><strong>GitHub:</strong> github.com/timothykimutai</p>
+            <p><strong>Email:</strong>timothykimtai@gmail.com</p>
+            <p><strong>Phone:</strong>(+254) 707-498-163</p>
+            <p><strong>GitHub:</strong>github.com/timothykimutai</p>
             <p><strong>LinkedIn:</strong> linkedin.com/in/timothy-kimutai</p>
+        
         </div>
         <hr>
         <h2>Profile Summary</h2>
-        <p>Data scientist with skills in machine learning, statistical modeling, and data visualization to support decision-making.</p>
+        <p>Enthusiastic and detail-oriented data scientist with strong analytical, programming, and problem-solving skills. Proficient in leveraging machine learning, statistical modeling, and data visualization to drive insights and support decision-making. Dedicated to applying data-driven solutions to real-world problems and eager to contribute to team success.</p>
         <hr>
         <h2>Education</h2>
-        <p><strong>Bachelor of Commerce (Accounting Major)</strong> <em>(2014 - 2018)</em></p>
+        <h3>Bachelor of Commerce </h3>
+        <p>Accounting Major </p>
+        <p><em>2014 - 2018</em></p>
         <hr>
         <h2>Certifications</h2>
-        <ul>
-            <li>IBM Data Science Certificate (Coursera, 2025)</li>
-            <li>AWS Certified Cloud Practitioner (AWS, 2024)</li>
-            <li>Google Data Analytics Certificate (Coursera, 2024)</li>
-        </ul>
+        <h3>Coursera</h3>
+        <p>IBM Data Science Certificate</p>
+        <p><em>2025</em></p>
+        <h3>Amazon Web Services</h3>
+        <p>AWS Certified Cloud Practitioner</p>
+        <p><em>2024</em></p>
+        <h3>Coursera</h3>
+        <p>Google Data Analytics Certificate</p>
+        <p><em>2024</em></p>
         <hr>
+        <div class="skills-section">
         <h2>Technical Skills</h2>
         <ul>
-            <li><strong>Programming:</strong> Python, R, SQL, Scala, Java</li>
-            <li><strong>AI & ML:</strong> TensorFlow, PyTorch, Scikit-learn</li>
-            <li><strong>Visualization:</strong> Power BI, Tableau</li>
-            <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li>
+            <ul>
+            <strong>Programming Languages:</strong> Python, R, SQL, Scala, Java, Bash/Unix
+            </ul>
+            <ul>
+            <strong>Machine Learning & AI:</strong> Scikit-learn, TensorFlow, PyTorch, XGBoost, LightGBM, Hugging Face, spaCy
+            </ul>
+            <ul>
+            <strong>Data Analysis & Visualization:</strong> Pandas, NumPy, Matplotlib, Seaborn, Plotly, Tableau, Power BI
+            </ul>
+            <ul>
+            <strong>Databases:</strong> MySQL, PostgreSQL, SQLite, MongoDB
+            </ul>
+            <ul>
+            <strong>Big Data Tools:</strong> Hadoop, Apache Spark
+            </ul>
+            <ul>
+            <strong>Cloud Platforms:</strong> AWS, Google Cloud Platform, Microsoft Azure
+            </ul>
+            <ul>
+            <strong>Tools:</strong> Git, Docker, Kubernetes, Jupyter Notebooks
+            </ul>
         </ul>
         <hr>
+        <div class="Project-section">
         <h2>Projects</h2>
+        <a href="https://github.com/timothykimutai/Credit-Approval-Prediction" ><strong>Machine Learning Project: Predictive Analysis</strong></a>
         <ul>
-            <li><a href="https://github.com/timothykimutai/SimpleRec"><strong>Movie Recommendation System</strong></a>: Built with Flask, TMDB API, and TF-IDF.</li>
-            <li><a href="https://github.com/timothykimutai/Automated-Financial-Insights-Dashboard"><strong>Financial Insights Dashboard</strong></a>: Built with Dash, MongoDB, and Flask.</li>
-            <li><a href="https://github.com/timothykimutai/Credit-Approval-Prediction" ><strong>Predictive Analysis</strong></a>: Built with ML tools, CI/CD deployment with Github Actions, Interactive PowerBI</li>
+            <li>Implemented a machine learning pipeline, from data preprocessing to model deployment, achieving 85% accuracy on the test dataset.</li>
+            <li>Automated CI/CD processes with GitHub Actions, ensuring reliable and efficient model updates.</li>
+            <li>Developed interactive Power BI dashboards to visualize key insights, including feature importance and prediction trends.</li>
+            <li>Utilized Python libraries like pandas, scikit-learn, and matplotlib for data manipulation, model building, and result analysis.</li>
+        </ul>
+        <a href="https://github.com/timothykimutai/SimpleRec"><strong>Movie Recommendation System</strong></a>
+        <ul>
+          <li>Developed a Flask-based movie recommendation system that provides personalized movie suggestions using TF-IDF vectorization and cosine similarity.</li>
+          <li>Integrated TMDB API to fetch real-time movie data and display interactive movie posters linked to streaming platforms.</li>
+          <li>Designed a responsive and user-friendly interface using HTML and Bootstrap, featuring a grid-based layout with clickable recommendations.</li>
+          <li>Implemented a scalable backend with Flask, supporting search functionality and dynamic content rendering.</li>
+          <li>Optimized movie data storage and processing for efficient recommendation delivery.</li>
+          <li>Documented project setup, structure, and installation procedures, enabling easy deployment and future contributions.</li>
+        </ul>
+        <a href="https://github.com/timothykimutai/Automated-Financial-Insights-Dashboard"><strong>Automated Financial Insights Dashboard</strong></a>
+        <ul>
+            <li>Developed a web-based dashboard using Python, Dash, and Flask to provide real-time stock market insights, enhancing decision-making through interactive charts and performance metrics.</li>
+            <li>Integrated MongoDB for efficient data storage and Power BI for advanced reporting, supporting data-driven investment analysis.</li>
+            <li>Implemented automated 5-minute data updates and moving averages, enabling timely market insights.</li>
+            <li>Exposed REST API endpoints for seamless data access, facilitating integration with external tools and applications.</li>
         </ul>
         <hr>
-        <h2>Experience</h2>
-        <p><strong>Freelance Data Analyst</strong> <em>(2024 - Present)</em></p>
+        <h2>Professional Experience</h2>
+        <h3>Freelance Data Analyst</h3>
+        <p><em>2024 - Present</em></p>
         <ul>
-            <li>Provided data visualization services to small businesses.</li>
-            <li>Improved conversions by 15% through A/B testing.</li>
+            <li>Provided data visualization and analysis services to small businesses, improving their operational efficiency.</li>
+            <li>Conducted A/B testing to optimize marketing campaigns, resulting in a 15% increase in conversions.</li>
+            <li>Created Power BI dashboards to track financial performance metrics.</li>
         </ul>
         <hr>
-        <h2>Achievements</h2>
+        <h2>Extracurricular Activities</h2>
         <ul>
-            <li>Top 30% in Coursera competitions.</li>
-            <li>Reduced data processing time by 25% with optimized SQL queries.</li>
+            <li>Participated in Coursera data Science competitions, including Machine Learning, achieving top 30% rankings.</li>
         </ul>
+        <hr>
+        <h2>Key Achievements</h2>
+        <ul>
+            <li>Reduced data processing time by 25% by implementing efficient SQL queries and indexing.</li>
+        </ul>
+        
     </div>
+    
 </body>
 </html>
