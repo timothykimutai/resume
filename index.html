@@ -2,175 +2,351 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <title>Timothy Kimutai - Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timothy Kimutai - Data Scientist</title>
     <style>
-    body {
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-text: #6b7280;
+            --background: #f3f4f6;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --accent-color: #dbeafe;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 40px;
-            color: #333;
+            color: var(--text-color);
             line-height: 1.6;
-            background-color: #f5f7fa;
-    }
-    .container {
-        max-width: 800px;
-        margin: 50px auto;
-        background: #ffffff;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border-radius: 8px;
-    }
-    h1 {
-        text-align: center;
-        color: #1a73e8;
-        margin-bottom: 20px;
+            background-color: var(--background);
+            padding: 20px;
+        }
         
-    }
-    h2 {
-        border-bottom: 1px solid #1a73e8;
-        padding-bottom: 5px;
-        margin-top: 30px;
-        color: #444;
-    }
-     h3 {
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .job-title {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .date {
+            font-style: italic;
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        li::before {
+            content: "▹";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-title {
+            font-weight: 600;
+            color: var(--primary-color);
             margin-bottom: 5px;
-            color: #555;
-    }
-    p {
-        margin: 5px 0 15px 0;
-    }
-    li {
-        margin-bottom: 5px;
-        margin: 5%;
+        }
         
-    }
-    
-    
-    ul {
-        list-style-type: square;
-        padding-left: 20px;
-    }
-    strong {
-        color: #1a73e6;
-    }
-    .header-info{
-        text-align: left;
-        margin-bottom: 20px;
-    }
-    .header-info p {
-        margin: 5px 0;
-    }
-    .skills-section ul{
-        margin-bottom: 20px;
-        padding-left: 20px;
-    }
-    .skills-section strong {
-        display: inline-block;
-        font-size: 1.1em;
-        margin-bottom: 10px;
-        text-decoration: underline;
-    }
-    hr {
-        border: 0;
-        border-top: 1px solid #ddd;
-        margin: 20px 0;
-    }
-    project-section{
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: auto;
-    }
-
+        .skill-list {
+            color: var(--text-color);
+        }
+        
+        .project {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--accent-color);
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .project-title a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        .project-title a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 style="margin-bottom: 5px;">Timothy Kimutai</h1>
-        <p style="text-align: center; font-weight: 400; line-height: 1.2;">Data Scientist</p>
-
-        <div class="header-info">
-            <p><strong>Email:</strong>timothykimtai@gmail.com</p>
-            <p><strong>Phone:</strong>(+254) 707-498-163</p>
-            <p><strong>GitHub:</strong>github.com/timothykimutai</p>
-            <p><strong>LinkedIn:</strong> linkedin.com/in/timothy-kimutai</p>
+        <header>
+            <h1>Timothy Kimutai</h1>
+            <p class="job-title">Data Scientist</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:timothykimtai@gmail.com">timothykimtai@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <a href="tel:+254707498163">(+254) 707-498-163</a>
+                </div>
+                <div class="contact-item">
+                    <span>💻</span>
+                    <a href="https://github.com/timothykimutai" target="_blank">github.com/timothykimutai</a>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <a href="https://linkedin.com/in/timothy-kimutai" target="_blank">linkedin.com/in/timothy-kimutai</a>
+                </div>
+            </div>
+        </header>
         
-        </div>
-        <hr>
-        <h2>Profile Summary</h2>
-        <p>Enthusiastic and detail-oriented data scientist with strong analytical, programming, and problem-solving skills. Proficient in leveraging machine learning, statistical modeling, and data visualization to drive insights and support decision-making. Dedicated to applying data-driven solutions to real-world problems and eager to contribute to team success.</p>
-        <hr>
-        <h2>Education</h2>
-        <p><strong>Bachelor of Commerce (Accounting Major)</strong> <em>(2014 - 2018)</em></p>
+        <section>
+            <h2>Profile Summary</h2>
+            <p>Enthusiastic and detail-oriented data scientist with strong analytical, programming, and problem-solving skills. Proficient in leveraging machine learning, statistical modeling, and data visualization to drive insights and support decision-making. Dedicated to applying data-driven solutions to real-world problems and eager to contribute to team success.</p>
+        </section>
         
+        <section>
+            <h2>Education</h2>
+            <h3>Bachelor of Commerce (Accounting Major)</h3>
+            <p class="date">2014 - 2018</p>
+        </section>
         
-        <hr>
-        <h2>Certifications</h2>
-        <p><strong>IBM Data Science Certificate</strong><em>(Coursera, 2025)</em></p>
-        <p><strong>Google Data Analytics Certificate</strong><em>(Coursera, 2025)</em></p>
-        <p><strong>AWS Certified Cloud Practitioner </strong><em>(AWS, 2024)</em></p>
+        <section>
+            <h2>Certifications</h2>
+            <ul>
+                <li><strong>IBM Data Science Certificate</strong> - Coursera, 2025</li>
+                <li><strong>Google Data Analytics Certificate</strong> - Coursera, 2025</li>
+                <li><strong>AWS Certified Cloud Practitioner</strong> - AWS, 2024</li>
+            </ul>
+        </section>
         
-        <hr>
-        <div class="skills-section">
-        <h2>Technical Skills</h2>
-        <p><strong>Programming Languages:</strong>Python, R, SQL, Scala, Java, Bash/Unix</p>
-        <p><strong>Machine Learning & AI:</strong>Scikit-learn, TensorFlow, PyTorch, XGBoost, LightGBM, Hugging Face, spaCy</p>
-        <p><strong>Data Analysis & Visualization:</strong>Pandas, NumPy, Matplotlib, Seaborn, Plotly, Tableau, Power BI</p>
-        <p><strong>Databases:</strong>MySQL, PostgreSQL, SQLite, MongoDB</p>
-        <p><strong>Big Data Tools:</strong>Hadoop, Apache Spark</p>
-        <p><strong>Cloud Platforms:</strong>AWS, Google Cloud Platform, Microsoft Azure</p>
-        <p><strong>Tools:</strong>Git, Docker, Kubernetes, Jupyter Notebooks</p>
-    
-        <hr>
-        <div class="Project-section">
-        <h2>Projects</h2>
-        <a href="https://github.com/timothykimutai/Customer-Acquisition-Cost" ><strong>E-commerce CAC Optimization</strong></a>
-        <ul>
-            <li>Built a predictive model to estimate CAC based on marketing spend.</li>
-            <li>Developed a Flask REST API for model deployment and predictions.</li>
-            <li>Created an interactive dashboard using Dash & Plotly for real-time analysis.</li>
-            <li>Implemented an optimization strategy for ad budget allocation, reducing costs while maintaining profitability.</li>
-        </ul>
-        <a href="https://github.com/timothykimutai/SimpleRec"><strong>Movie Recommendation System</strong></a>
-        <ul>
-          <li>Developed a Flask-based movie recommendation system that provides personalized movie suggestions using TF-IDF vectorization and cosine similarity.</li>
-          <li>Integrated TMDB API to fetch real-time movie data and display interactive movie posters linked to streaming platforms.</li>
-          <li>Designed a responsive and user-friendly interface using HTML and Bootstrap, featuring a grid-based layout with clickable recommendations.</li>
-          <li>Implemented a scalable backend with Flask, supporting search functionality and dynamic content rendering.</li>
-          <li>Optimized movie data storage and processing for efficient recommendation delivery.</li>
-          <li>Documented project setup, structure, and installation procedures, enabling easy deployment and future contributions.</li>
-        </ul>
-        <a href="https://github.com/timothykimutai/Automated-Financial-Insights-Dashboard"><strong>Automated Financial Insights Dashboard</strong></a>
-        <ul>
-            <li>Developed a web-based dashboard using Python, Dash, and Flask to provide real-time stock market insights, enhancing decision-making through interactive charts and performance metrics.</li>
-            <li>Integrated MongoDB for efficient data storage and Power BI for advanced reporting, supporting data-driven investment analysis.</li>
-            <li>Implemented automated 5-minute data updates and moving averages, enabling timely market insights.</li>
-            <li>Exposed REST API endpoints for seamless data access, facilitating integration with external tools and applications.</li>
-        </ul>
-        <hr>
-        <h2>Professional Experience</h2>
-        <h3>Freelance Data Analyst</h3>
-        <p><em>2024 - Present</em></p>
-        <ul>
-            <li>Provided data visualization and analysis services to small businesses, improving their operational efficiency.</li>
-            <li>Conducted A/B testing to optimize marketing campaigns, resulting in a 15% increase in conversions.</li>
-            <li>Created Power BI dashboards to track financial performance metrics.</li>
-        </ul>
-        <hr>
-        <h2>Extracurricular Activities</h2>
-        <ul>
-            <li>Participated in Coursera data Science competitions, including Machine Learning, achieving top 30% rankings.</li>
-        </ul>
-        <hr>
-        <h2>Key Achievements</h2>
-        <ul>
-            <li>Reduced data processing time by 25% by implementing efficient SQL queries and indexing.</li>
-        </ul>
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <p class="skill-title">Programming Languages</p>
+                    <p class="skill-list">Python, R, SQL, Scala, Java, Bash/Unix</p>
+                </div>
+                <div class="skill-category">
+                    <p class="skill-title">Machine Learning & AI</p>
+                    <p class="skill-list">Scikit-learn, TensorFlow, PyTorch, XGBoost, LightGBM, Hugging Face, spaCy</p>
+                </div>
+                <div class="skill-category">
+                    <p class="skill-title">Data Analysis & Visualization</p>
+                    <p class="skill-list">Pandas, NumPy, Matplotlib, Seaborn, Plotly, Tableau, Power BI</p>
+                </div>
+                <div class="skill-category">
+                    <p class="skill-title">Databases</p>
+                    <p class="skill-list">MySQL, PostgreSQL, SQLite, MongoDB</p>
+                </div>
+                <div class="skill-category">
+                    <p class="skill-title">Big Data Tools</p>
+                    <p class="skill-list">Hadoop, Apache Spark</p>
+                </div>
+                <div class="skill-category">
+                    <p class="skill-title">Cloud Platforms</p>
+                    <p class="skill-list">AWS, Google Cloud Platform, Microsoft Azure</p>
+                </div>
+                <div class="skill-category">
+                    <p class="skill-title">Tools</p>
+                    <p class="skill-list">Git, Docker, Kubernetes, Jupyter Notebooks</p>
+                </div>
+            </div>
+        </section>
         
+        <section>
+            <h2>Projects</h2>
+            <div class="project">
+                <div class="project-title">
+                    <a href="https://github.com/timothykimutai/Customer-Acquisition-Cost" target="_blank">E-commerce CAC Optimization</a>
+                </div>
+                <ul>
+                    <li>Built a predictive model to estimate CAC based on marketing spend.</li>
+                    <li>Developed a Flask REST API for model deployment and predictions.</li>
+                    <li>Created an interactive dashboard using Dash & Plotly for real-time analysis.</li>
+                    <li>Implemented an optimization strategy for ad budget allocation, reducing costs while maintaining profitability.</li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">
+                    <a href="https://github.com/timothykimutai/SimpleRec" target="_blank">Movie Recommendation System</a>
+                </div>
+                <ul>
+                    <li>Developed a Flask-based movie recommendation system using TF-IDF vectorization and cosine similarity.</li>
+                    <li>Integrated TMDB API to fetch real-time movie data and display interactive movie posters.</li>
+                    <li>Designed a responsive and user-friendly interface using HTML and Bootstrap.</li>
+                    <li>Implemented a scalable backend with Flask, supporting search functionality and dynamic content rendering.</li>
+                    <li>Optimized movie data storage and processing for efficient recommendation delivery.</li>
+                    <li>Documented project setup, structure, and installation procedures.</li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="project-title">
+                    <a href="https://github.com/timothykimutai/Automated-Financial-Insights-Dashboard" target="_blank">Automated Financial Insights Dashboard</a>
+                </div>
+                <ul>
+                    <li>Developed a web-based dashboard using Python, Dash, and Flask to provide real-time stock market insights.</li>
+                    <li>Integrated MongoDB for efficient data storage and Power BI for advanced reporting.</li>
+                    <li>Implemented automated 5-minute data updates and moving averages, enabling timely market insights.</li>
+                    <li>Exposed REST API endpoints for seamless data access, facilitating integration with external tools.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Professional Experience</h2>
+            <h3>Freelance Data Analyst</h3>
+            <p class="date">2024 - Present</p>
+            <ul>
+                <li>Provided data visualization and analysis services to small businesses, improving their operational efficiency.</li>
+                <li>Conducted A/B testing to optimize marketing campaigns, resulting in a 15% increase in conversions.</li>
+                <li>Created Power BI dashboards to track financial performance metrics.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Extracurricular Activities</h2>
+            <ul>
+                <li>Participated in Coursera data Science competitions, including Machine Learning, achieving top 30% rankings.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Key Achievements</h2>
+            <ul>
+                <li>Reduced data processing time by 25% by implementing efficient SQL queries and indexing.</li>
+            </ul>
+        </section>
     </div>
-    
 </body>
 </html>
