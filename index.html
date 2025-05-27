@@ -3,359 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timothy Kimutai - Data Scientist</title>
+    <title>Timothy Kimutai - Resume</title>
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --text-color: #1f2937;
-            --light-text: #6b7280;
-            --background: #f3f4f6;
-            --card-bg: #ffffff;
-            --border-color: #e5e7eb;
-            --accent-color: #dbeafe;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: var(--background);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background-color: #f5f5f5;
             padding: 20px;
         }
-        
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background: var(--card-bg);
-            padding: 40px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-radius: 12px;
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
         }
-        
-        header {
+
+        /* Left Column - Sidebar */
+        .sidebar {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px 25px;
+        }
+
+        .profile-section {
             text-align: center;
             margin-bottom: 30px;
         }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            font-weight: 700;
+
+        .profile-section h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
         }
-        
-        .job-title {
-            font-size: 1.2rem;
-            color: var(--light-text);
+
+        .profile-section h2 {
+            font-size: 16px;
+            font-weight: normal;
+            opacity: 0.9;
             margin-bottom: 20px;
-            font-weight: 500;
         }
-        
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
             margin-bottom: 30px;
         }
-        
+
         .contact-item {
+            margin-bottom: 12px;
+            font-size: 13px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 8px;
         }
-        
-        .contact-item a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s;
+
+        .contact-item strong {
+            min-width: 50px;
+            opacity: 0.8;
         }
-        
-        .contact-item a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
+
+        .education-section, .certificates-section {
+            margin-bottom: 25px;
         }
-        
-        section {
-            margin-bottom: 30px;
-        }
-        
-        h2 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
+
+        .education-item, .certificate-item {
             margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--accent-color);
+            font-size: 13px;
         }
-        
-        h3 {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 8px;
+
+        .education-item h3, .certificate-item h3 {
+            font-size: 14px;
+            margin-bottom: 3px;
+            font-weight: bold;
         }
-        
-        p {
-            margin-bottom: 15px;
-            color: var(--text-color);
+
+        .education-item p, .certificate-item p {
+            opacity: 0.9;
+            font-size: 12px;
         }
-        
-        .date {
-            font-style: italic;
-            color: var(--light-text);
-            margin-bottom: 10px;
+
+        /* Right Column - Main Content */
+        .main-content {
+            padding: 30px 35px;
         }
-        
-        ul {
-            padding-left: 20px;
+
+        .main-section {
+            margin-bottom: 35px;
+        }
+
+        .main-section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
             margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        
-        li {
+
+        .experience-item, .project-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-header, .project-header {
+            margin-bottom: 12px;
+        }
+
+        .job-title, .project-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+
+        .company-info, .project-tech {
+            font-size: 14px;
+            color: #666;
             margin-bottom: 8px;
-            list-style-type: none;
-            position: relative;
-            padding-left: 20px;
         }
-        
-        li::before {
-            content: "▹";
-            color: var(--primary-color);
+
+        .experience-list, .project-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-list li, .project-list li {
+            margin-bottom: 8px;
+            font-size: 13px;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .experience-list li:before, .project-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
             position: absolute;
             left: 0;
         }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+
+        /* Skills highlighting */
+        .skill-highlight {
+            background: #e8f4fd;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-weight: 500;
         }
-        
-        .skill-category {
-            margin-bottom: 15px;
-        }
-        
-        .skill-title {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-        
-        .skill-list {
-            color: var(--text-color);
-        }
-        
-        .project {
-            padding: 20px;
-            border-radius: 8px;
-            background-color: var(--accent-color);
-            margin-bottom: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        }
-        
-        .project-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .project-title a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-        
-        .project-title a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-        
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
+            .resume-container {
+                grid-template-columns: 1fr;
+                margin: 10px;
+            }
+            
+            .sidebar {
                 padding: 20px;
             }
             
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .main-content {
+                padding: 20px;
             }
             
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
+            body {
+                padding: 10px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                max-width: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Timothy Kimutai</h1>
-            <p class="job-title">Data Scientist</p>
-            
+    <div class="resume-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="profile-section">
+                <h1>Timothy Kimutai</h1>
+                <h2>Data Scientist</h2>
+            </div>
+
             <div class="contact-info">
+                <h3 class="section-title">Contact</h3>
                 <div class="contact-item">
-                    <span>📧</span>
-                    <a href="mailto:timothykimtai@gmail.com">timothykimtai@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span>📞</span>
-                    <a href="tel:+254707498163">(+254) 707-498-163</a>
+                    <strong>Phone:</strong>
+                    <span>+254-707-498-163</span>
                 </div>
                 <div class="contact-item">
-                    <span>💻</span>
-                    <a href="https://github.com/timothykimutai" target="_blank">github.com/timothykimutai</a>
+                    <strong>Email:</strong>
+                    <span>timothykimtai@gmail.com</span>
                 </div>
                 <div class="contact-item">
-                    <span>🔗</span>
-                    <a href="https://linkedin.com/in/timothy-kimutai" target="_blank">linkedin.com/in/timothy-kimutai</a>
+                    <strong>Address:</strong>
+                    <span>273 Nairobi, Kenya</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Portfolio:</strong>
+                    <span>github</span>
                 </div>
             </div>
-        </header>
-        
-        <section>
-            <h2>Profile Summary</h2>
-            <p>Enthusiastic and detail-oriented data scientist with strong analytical, programming, and problem-solving skills. Proficient in leveraging machine learning, statistical modeling, and data visualization to drive insights and support decision-making. Dedicated to applying data-driven solutions to real-world problems and eager to contribute to team success.</p>
-        </section>
-        
-        <section>
-            <h2>Education</h2>
-            <h3>Bachelor of Commerce (Accounting Major)</h3>
-            <p class="date">2014 - 2018</p>
-        </section>
-        
-        <section>
-            <h2>Certifications</h2>
-            <ul>
-                <li><strong>IBM Data Science Certificate</strong> - Coursera, 2025</li>
-                <li><strong>Google Data Analytics Certificate</strong> - Coursera, 2025</li>
-                <li><strong>AWS Certified Cloud Practitioner</strong> - AWS, 2024</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <p class="skill-title">Programming Languages</p>
-                    <p class="skill-list">Python, R, SQL, Scala, Java, Bash/Unix</p>
-                </div>
-                <div class="skill-category">
-                    <p class="skill-title">Machine Learning & AI</p>
-                    <p class="skill-list">Scikit-learn, TensorFlow, PyTorch, XGBoost, LightGBM, Hugging Face, spaCy</p>
-                </div>
-                <div class="skill-category">
-                    <p class="skill-title">Data Analysis & Visualization</p>
-                    <p class="skill-list">Pandas, NumPy, Matplotlib, Seaborn, Plotly, Tableau, Power BI</p>
-                </div>
-                <div class="skill-category">
-                    <p class="skill-title">Databases</p>
-                    <p class="skill-list">MySQL, PostgreSQL, SQLite, MongoDB</p>
-                </div>
-                <div class="skill-category">
-                    <p class="skill-title">Big Data Tools</p>
-                    <p class="skill-list">Hadoop, Apache Spark</p>
-                </div>
-                <div class="skill-category">
-                    <p class="skill-title">Cloud Platforms</p>
-                    <p class="skill-list">AWS, Google Cloud Platform, Microsoft Azure</p>
-                </div>
-                <div class="skill-category">
-                    <p class="skill-title">Tools</p>
-                    <p class="skill-list">Git, Docker, Kubernetes, Jupyter Notebooks</p>
+
+            <div class="education-section">
+                <h3 class="section-title">Education</h3>
+                <div class="education-item">
+                    <h3>Bachelor of Commerce</h3>
+                    <p>Accounting major</p>
+                    <p>Technical University of Mombasa</p>
+                    <p>2014-2018</p>
                 </div>
             </div>
-        </section>
-        
-        <section>
-            <h2>Projects</h2>
-            <div class="project">
-                <div class="project-title">
-                    <a href="https://github.com/timothykimutai/Customer-Acquisition-Cost" target="_blank">E-commerce CAC Optimization</a>
+
+            <div class="certificates-section">
+                <h3 class="section-title">Certificates</h3>
+                <div class="certificate-item">
+                    <h3>IBM Data Science Professional Certificate</h3>
+                    <p>Coursera | 2025</p>
                 </div>
-                <ul>
-                    <li>Built a predictive model to estimate CAC based on marketing spend.</li>
-                    <li>Developed a Flask REST API for model deployment and predictions.</li>
-                    <li>Created an interactive dashboard using Dash & Plotly for real-time analysis.</li>
-                    <li>Implemented an optimization strategy for ad budget allocation, reducing costs while maintaining profitability.</li>
-                </ul>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">
-                    <a href="https://github.com/timothykimutai/SimpleRec" target="_blank">Movie Recommendation System</a>
+                <div class="certificate-item">
+                    <h3>Google Data Analytics</h3>
+                    <p>Coursera | 2025</p>
                 </div>
-                <ul>
-                    <li>Developed a Flask-based movie recommendation system using TF-IDF vectorization and cosine similarity.</li>
-                    <li>Integrated TMDB API to fetch real-time movie data and display interactive movie posters.</li>
-                    <li>Designed a responsive and user-friendly interface using HTML and Bootstrap.</li>
-                    <li>Implemented a scalable backend with Flask, supporting search functionality and dynamic content rendering.</li>
-                    <li>Optimized movie data storage and processing for efficient recommendation delivery.</li>
-                    <li>Documented project setup, structure, and installation procedures.</li>
-                </ul>
-            </div>
-            
-            <div class="project">
-                <div class="project-title">
-                    <a href="https://github.com/timothykimutai/Automated-Financial-Insights-Dashboard" target="_blank">Automated Financial Insights Dashboard</a>
+                <div class="certificate-item">
+                    <h3>AWS Certified Cloud Practitioner</h3>
+                    <p>AWS | 2025</p>
                 </div>
-                <ul>
-                    <li>Developed a web-based dashboard using Python, Dash, and Flask to provide real-time stock market insights.</li>
-                    <li>Integrated MongoDB for efficient data storage and Power BI for advanced reporting.</li>
-                    <li>Implemented automated 5-minute data updates and moving averages, enabling timely market insights.</li>
-                    <li>Exposed REST API endpoints for seamless data access, facilitating integration with external tools.</li>
-                </ul>
             </div>
-        </section>
-        
-        <section>
-            <h2>Professional Experience</h2>
-            <h3>Freelance Data Analyst</h3>
-            <p class="date">2024 - Present</p>
-            <ul>
-                <li>Provided data visualization and analysis services to small businesses, improving their operational efficiency.</li>
-                <li>Conducted A/B testing to optimize marketing campaigns, resulting in a 15% increase in conversions.</li>
-                <li>Created Power BI dashboards to track financial performance metrics.</li>
-            </ul>
-            
-            <h3>Co-Founder, Bokan Logistics-Mombasa</h3>
-            <p class="date">2019 - Present</p>
-            <ul>
-                <li>Developed and implemented business strategies that led to a 25% increase in annual revenue.</li>
-                <li>Overseeing daily operations, optimizing supply chain processes to reduce delivery times by 15%.</li>
-                <li>Recruited and managing a team of 10+ employees, fostering a culture of efficiency and collaboration.</li>
-                <li>Established partnerships with key clients, expanding the customer base by 30%.</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>Extracurricular Activities</h2>
-            <ul>
-                <li>Participated in Coursera data Science competitions, including Machine Learning, achieving top 30% rankings.</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>Key Achievements</h2>
-            <ul>
-                <li>Reduced data processing time by 25% by implementing efficient SQL queries and indexing.</li>
-            </ul>
-        </section>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="main-section">
+                <h2 class="main-section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Freelance Data Analyst</div>
+                        <div class="company-info">Upwork | 2024-Present</div>
+                    </div>
+                    <ul class="experience-list">
+                        <li>Developed and deployed a customer churn prediction model using <span class="skill-highlight">Random Forest</span> and <span class="skill-highlight">Logistic Regression</span>, achieving 88% accuracy.</li>
+                        <li>Collaborated with marketing and product teams to deliver interactive <span class="skill-highlight">Power BI</span> dashboards tracking customer engagement.</li>
+                        <li>Designed automated data pipelines using <span class="skill-highlight">Python</span> and <span class="skill-highlight">AWS Lambda</span> for continuous data ingestion and transformation.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Co-Founder & Director</div>
+                        <div class="company-info">Bokan Logistics - Mombasa | 2019-Present</div>
+                    </div>
+                    <ul class="experience-list">
+                        <li>Developed and implemented business strategies that led to a 25% increase in annual revenue.</li>
+                        <li>Overseeing daily operations, optimizing supply chain processes to reduce delivery times by 15%.</li>
+                        <li>Recruited and managing a team of 10+ employees, fostering a culture of efficiency and collaboration.</li>
+                        <li>Established partnerships with key clients, expanding the customer base by 30%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-section">
+                <h2 class="main-section-title">Projects</h2>
+                
+                <div class="project-item">
+                    <div class="project-header">
+                        <div class="project-title">E-Commerce Analytics Platform</div>
+                    </div>
+                    <ul class="project-list">
+                        <li>Developed a comprehensive analytics platform using <span class="skill-highlight">Python</span>, <span class="skill-highlight">FastAPI</span>, and <span class="skill-highlight">Streamlit</span> that processes and analyzes e-commerce transaction data, resulting in actionable business insights and improved customer retention strategies.</li>
+                        <li>Implemented secure user authentication system with <span class="skill-highlight">JWT tokens</span>, role-based access control, and <span class="skill-highlight">SQLite</span> database integration, ensuring secure access to sensitive business data.</li>
+                        <li>Engineered customer segmentation using <span class="skill-highlight">RFM (Recency, Frequency, Monetary)</span> analysis and <span class="skill-highlight">K-means clustering</span>, enabling targeted marketing campaigns and personalized customer experiences.</li>
+                        <li>Built real-time data processing pipeline with <span class="skill-highlight">Shopify integration</span>, handling webhook events and synchronizing transaction data for immediate analysis.</li>
+                        <li>Designed and implemented <span class="skill-highlight">RESTful API</span> architecture with FastAPI, featuring comprehensive error handling, input validation, and automated API documentation.</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <div class="project-title">Customer Churn Prediction</div>
+                    </div>
+                    <ul class="project-list">
+                        <li>Built an end-to-end ML pipeline to predict telecom customer churn with 87% <span class="skill-highlight">AUC-ROC</span>, reducing potential revenue loss by identifying at-risk customers.</li>
+                        <li>Performed exploratory data analysis (EDA) revealing key churn drivers: month-to-month contracts (43% churn) and fiber optic users (42% churn).</li>
+                        <li>Engineered features like tenure groups and streaming service flags, improving model accuracy by 12% (F1-score: 0.78).</li>
+                        <li>Deployed the <span class="skill-highlight">XGBoost</span> model using <span class="skill-highlight">FastAPI</span> and built an interactive <span class="skill-highlight">Streamlit</span> dashboard for business teams to visualize insights.</li>
+                        <li>Implemented model monitoring to track performance degradation and automate retraining alerts.</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <div class="project-title">Movie Recommendation System</div>
+                    </div>
+                    <ul class="project-list">
+                        <li>Developed a <span class="skill-highlight">Flask</span>-based movie recommendation system using <span class="skill-highlight">TF-IDF vectorization</span> and <span class="skill-highlight">cosine similarity</span>.</li>
+                        <li>Integrated <span class="skill-highlight">TMDB API</span> to fetch real-time movie data and display interactive movie posters.</li>
+                        <li>Designed a responsive and user-friendly interface using <span class="skill-highlight">HTML</span> and <span class="skill-highlight">Bootstrap</span>.</li>
+                        <li>Implemented a scalable backend with Flask, supporting search functionality and dynamic content rendering.</li>
+                        <li>Optimized movie data storage and processing for efficient recommendation delivery.</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <div class="project-title">Automated Financial Insights Dashboard</div>
+                    </div>
+                    <ul class="project-list">
+                        <li>Developed a web-based dashboard using <span class="skill-highlight">Python</span>, <span class="skill-highlight">Dash</span>, and <span class="skill-highlight">Flask</span> to provide real-time stock market insights.</li>
+                        <li>Integrated <span class="skill-highlight">MongoDB</span> for efficient data storage and <span class="skill-highlight">Power BI</span> for advanced reporting.</li>
+                        <li>Implemented automated 5-minute data updates and moving averages, enabling timely market insights.</li>
+                        <li>Exposed <span class="skill-highlight">REST API</span> endpoints for seamless data access, facilitating integration with external tools.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
