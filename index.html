@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timothy Kimutai - Resume</title>
+    <title>Timothy Kipchirchir Kimutai - Data Scientist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,183 +13,372 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             color: #333;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             padding: 20px;
         }
 
         .resume-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            min-height: 100vh;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Left Column - Sidebar */
-        .sidebar {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 30px 25px;
-        }
-
-        .profile-section {
+            padding: 40px;
             text-align: center;
-            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .profile-section h1 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 5px;
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255,255,255,0.05) 2px,
+                rgba(255,255,255,0.05) 4px
+            );
+            animation: shimmer 20s linear infinite;
         }
 
-        .profile-section h2 {
-            font-size: 16px;
-            font-weight: normal;
-            opacity: 0.9;
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .title {
+            font-size: 1.4rem;
             margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid rgba(255,255,255,0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-info {
-            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-item {
-            margin-bottom: 12px;
-            font-size: 13px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            transition: color 0.3s ease;
         }
 
-        .contact-item strong {
-            min-width: 50px;
-            opacity: 0.8;
+        .contact-item:hover {
+            color: #3498db;
         }
 
-        .education-section, .certificates-section {
-            margin-bottom: 25px;
+        .contact-item i {
+            font-size: 1.1rem;
         }
 
-        .education-item, .certificate-item {
-            margin-bottom: 15px;
-            font-size: 13px;
-        }
-
-        .education-item h3, .certificate-item h3 {
-            font-size: 14px;
-            margin-bottom: 3px;
-            font-weight: bold;
-        }
-
-        .education-item p, .certificate-item p {
-            opacity: 0.9;
-            font-size: 12px;
-        }
-
-        /* Right Column - Main Content */
         .main-content {
-            padding: 30px 35px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            padding: 40px;
         }
 
-        .main-section {
-            margin-bottom: 35px;
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
         }
 
-        .main-section-title {
-            font-size: 18px;
-            font-weight: bold;
+        .content {
+            padding-left: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
             color: #2c3e50;
+            font-size: 1.8rem;
             margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #3498db;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+
+        .profile-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
         }
 
         .experience-item, .project-item {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #fff;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .experience-header, .project-header {
-            margin-bottom: 12px;
+        .experience-item:hover, .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .job-title, .project-title {
-            font-size: 16px;
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
             font-weight: bold;
             color: #2c3e50;
-            margin-bottom: 3px;
         }
 
-        .company-info, .project-tech {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 8px;
+        .company {
+            font-size: 1.1rem;
+            color: #3498db;
+            font-weight: 600;
         }
 
-        .experience-list, .project-list {
+        .duration {
+            color: #7f8c8d;
+            font-weight: 500;
+            background: #ecf0f1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .job-description {
+            margin-top: 15px;
+        }
+
+        .job-description ul {
             list-style: none;
             padding-left: 0;
         }
 
-        .experience-list li, .project-list li {
+        .job-description li {
             margin-bottom: 8px;
-            font-size: 13px;
-            line-height: 1.5;
+            padding-left: 20px;
             position: relative;
-            padding-left: 15px;
+            color: #555;
         }
 
-        .experience-list li:before, .project-list li:before {
-            content: "•";
-            color: #3498db;
-            font-weight: bold;
+        .job-description li::before {
+            content: '▸';
             position: absolute;
             left: 0;
+            color: #3498db;
+            font-weight: bold;
         }
 
-        /* Skills highlighting */
-        .skill-highlight {
-            background: #e8f4fd;
-            padding: 1px 4px;
-            border-radius: 3px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 0.9rem;
             font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Responsive Design */
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .education-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .degree {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .university {
+            color: #e74c3c;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .year {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .achievements ul, .certificates ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li, .certificates li {
+            margin-bottom: 10px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid #27ae60;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .achievements li::before {
+            content: '🏆';
+            position: absolute;
+            left: 15px;
+            top: 15px;
+        }
+
+        .certificates li::before {
+            content: '📜';
+            position: absolute;
+            left: 15px;
+            top: 15px;
+        }
+
+        .project-links {
+            margin-top: 15px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #2980b9;
+        }
+
         @media (max-width: 768px) {
-            .resume-container {
-                grid-template-columns: 1fr;
-                margin: 10px;
-            }
-            
-            .sidebar {
-                padding: 20px;
-            }
-            
             .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
                 padding: 20px;
             }
-            
-            body {
-                padding: 10px;
+
+            .header {
+                padding: 30px 20px;
             }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .content {
+                padding-left: 0;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            background: #2980b9;
+            transform: scale(1.1);
         }
 
         @media print {
@@ -199,152 +389,240 @@
             
             .resume-container {
                 box-shadow: none;
-                max-width: none;
+                border-radius: 0;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            .header::before {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <div class="resume-container">
-        <!-- Left Sidebar -->
-        <div class="sidebar">
-            <div class="profile-section">
-                <h1>Timothy Kimutai</h1>
-                <h2>Data Scientist</h2>
-            </div>
-
+        <header class="header">
+            <h1>Timothy Kipchirchir Kimutai</h1>
+            <p class="title">Data Scientist & Analytics Expert</p>
             <div class="contact-info">
-                <h3 class="section-title">Contact</h3>
                 <div class="contact-item">
-                    <strong>Phone:</strong>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Nairobi, Kenya</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
                     <span>+254-707-498-163</span>
                 </div>
                 <div class="contact-item">
-                    <strong>Email:</strong>
+                    <i class="fas fa-envelope"></i>
                     <span>timothykimtai@gmail.com</span>
                 </div>
                 <div class="contact-item">
-                    <strong>Address:</strong>
-                    <span>273 Nairobi, Kenya</span>
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
                 </div>
                 <div class="contact-item">
-                    <strong>Portfolio:</strong>
-                    <span>github</span>
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
                 </div>
             </div>
+        </header>
 
-            <div class="education-section">
-                <h3 class="section-title">Education</h3>
-                <div class="education-item">
-                    <h3>Bachelor of Commerce</h3>
-                    <p>Accounting major</p>
-                    <p>2014-2018</p>
-                </div>
-            </div>
-
-            <div class="certificates-section">
-                <h3 class="section-title">Certificates</h3>
-                <div class="certificate-item">
-                    <h3>IBM Data Science Professional Certificate</h3>
-                    <p>Coursera | 2025</p>
-                </div>
-                <div class="certificate-item">
-                    <h3>Google Data Analytics</h3>
-                    <p>Coursera | 2024</p>
-                </div>
-                <div class="certificate-item">
-                    <h3>AWS Certified Cloud Practitioner</h3>
-                    <p>AWS | 2024</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Content -->
         <div class="main-content">
-            <div class="main-section">
-                <h2 class="main-section-title">Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="job-title">Freelance Data Analyst</div>
-                        <div class="company-info">Upwork | 2024-Present</div>
+            <aside class="sidebar">
+                <section class="section">
+                    <h2>Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">SQL</div>
+                        <div class="skill-tag">Machine Learning</div>
+                        <div class="skill-tag">AWS</div>
+                        <div class="skill-tag">CI/CD</div>
+                        <div class="skill-tag">Kubernetes</div>
+                        <div class="skill-tag">Leadership</div>
+                        <div class="skill-tag">Communication</div>
+                        <div class="skill-tag">Analytics</div>
+                        <div class="skill-tag">Strategy</div>
                     </div>
-                    <ul class="experience-list">
-                        <li>Developed and deployed a customer churn prediction model using <span class="skill-highlight">Random Forest</span> and <span class="skill-highlight">Logistic Regression</span>, achieving 88% accuracy.</li>
-                        <li>Collaborated with marketing and product teams to deliver interactive <span class="skill-highlight">Power BI</span> dashboards tracking customer engagement.</li>
-                        <li>Designed automated data pipelines using <span class="skill-highlight">Python</span> and <span class="skill-highlight">AWS Lambda</span> for continuous data ingestion and transformation.</li>
-                    </ul>
-                </div>
+                </section>
 
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="job-title">Co-Founder & Director</div>
-                        <div class="company-info">Bokan Logistics - Mombasa | 2019-Present</div>
+                <section class="section">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <div class="degree">Bachelor of Commerce</div>
+                        <div class="university">Technical University of Mombasa</div>
+                        <div class="year">2014 - 2018</div>
+                        <p style="margin-top: 10px; color: #666;">Accounting Major</p>
                     </div>
-                    <ul class="experience-list">
-                        <li>Developed and implemented business strategies that led to a 25% increase in annual revenue.</li>
-                        <li>Overseeing daily operations, optimizing supply chain processes to reduce delivery times by 15%.</li>
-                        <li>Recruited and managing a team of 10+ employees, fostering a culture of efficiency and collaboration.</li>
-                        <li>Established partnerships with key clients, expanding the customer base by 30%.</li>
-                    </ul>
-                </div>
-            </div>
+                </section>
 
-            <div class="main-section">
-                <h2 class="main-section-title">Projects</h2>
-                
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-title">E-Commerce Analytics Platform</div>
+                <section class="section">
+                    <h2>Key Achievements</h2>
+                    <div class="achievements">
+                        <ul>
+                            <li>Delivered a customer churn model with 87% AUC, helping retain high-value telecom clients</li>
+                            <li>Built an E-commerce analytics platform with dynamic user segmentation</li>
+                            <li>Co-founded and scaled a logistics startup, increasing annual revenue by 25%</li>
+                            <li>Reduced delivery times by 15% through data-driven optimization</li>
+                        </ul>
                     </div>
-                    <ul class="project-list">
-                        <li>Developed a comprehensive analytics platform using <span class="skill-highlight">Python</span>, <span class="skill-highlight">FastAPI</span>, and <span class="skill-highlight">Streamlit</span> that processes and analyzes e-commerce transaction data, resulting in actionable business insights and improved customer retention strategies.</li>
-                        <li>Implemented secure user authentication system with <span class="skill-highlight">JWT tokens</span>, role-based access control, and <span class="skill-highlight">SQLite</span> database integration, ensuring secure access to sensitive business data.</li>
-                        <li>Engineered customer segmentation using <span class="skill-highlight">RFM (Recency, Frequency, Monetary)</span> analysis and <span class="skill-highlight">K-means clustering</span>, enabling targeted marketing campaigns and personalized customer experiences.</li>
-                        <li>Built real-time data processing pipeline with <span class="skill-highlight">Shopify integration</span>, handling webhook events and synchronizing transaction data for immediate analysis.</li>
-                        <li>Designed and implemented <span class="skill-highlight">RESTful API</span> architecture with FastAPI, featuring comprehensive error handling, input validation, and automated API documentation.</li>
-                    </ul>
-                </div>
+                </section>
 
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-title">Customer Churn Prediction</div>
+                <section class="section">
+                    <h2>Certifications</h2>
+                    <div class="certificates">
+                        <ul>
+                            <li>IBM Data Science Professional Certificate</li>
+                            <li>Google Data Analytics</li>
+                            <li>AWS Certified Cloud Practitioner</li>
+                        </ul>
                     </div>
-                    <ul class="project-list">
-                        <li>Built an end-to-end ML pipeline to predict telecom customer churn with 87% <span class="skill-highlight">AUC-ROC</span>, reducing potential revenue loss by identifying at-risk customers.</li>
-                        <li>Performed exploratory data analysis (EDA) revealing key churn drivers: month-to-month contracts (43% churn) and fiber optic users (42% churn).</li>
-                        <li>Engineered features like tenure groups and streaming service flags, improving model accuracy by 12% (F1-score: 0.78).</li>
-                        <li>Deployed the <span class="skill-highlight">XGBoost</span> model using <span class="skill-highlight">FastAPI</span> and built an interactive <span class="skill-highlight">Streamlit</span> dashboard for business teams to visualize insights.</li>
-                        <li>Implemented model monitoring to track performance degradation and automate retraining alerts.</li>
-                    </ul>
-                </div>
+                </section>
+            </aside>
 
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-title">Movie Recommendation System</div>
-                    </div>
-                    <ul class="project-list">
-                        <li>Developed a <span class="skill-highlight">Flask</span>-based movie recommendation system using <span class="skill-highlight">TF-IDF vectorization</span> and <span class="skill-highlight">cosine similarity</span>.</li>
-                        <li>Integrated <span class="skill-highlight">TMDB API</span> to fetch real-time movie data and display interactive movie posters.</li>
-                        <li>Designed a responsive and user-friendly interface using <span class="skill-highlight">HTML</span> and <span class="skill-highlight">Bootstrap</span>.</li>
-                        <li>Implemented a scalable backend with Flask, supporting search functionality and dynamic content rendering.</li>
-                        <li>Optimized movie data storage and processing for efficient recommendation delivery.</li>
-                    </ul>
-                </div>
+            <main class="content">
+                <section class="section">
+                    <h2>Profile</h2>
+                    <p class="profile-text">
+                        Results-driven Data Scientist with a background in predictive modeling, data engineering, and business intelligence. Strong track record of implementing high-impact analytics solutions using Python, SQL, and cloud platforms. Capable of translating business problems into data-driven solutions that drive revenue growth, improve customer experience, and optimize operations. Proven in stakeholder communication, team management, and delivering scalable solutions in live production environments.
+                    </p>
+                </section>
 
-                <div class="project-item">
-                    <div class="project-header">
-                        <div class="project-title">Automated Financial Insights Dashboard</div>
+                <section class="section">
+                    <h2>Professional Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Freelance Data Analyst</div>
+                                <div class="company">Upwork</div>
+                            </div>
+                            <div class="duration">Apr 2024 - Present</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Analyzed customer behavior, conversion funnels, and lifetime value (LTV) using Python and SQL, resulting in 20% increased retention for e-commerce brands</li>
+                                <li>Created automated cohort analysis and RFM dashboards to inform personalized marketing strategies, resulting in a 10% increase in customer engagement</li>
+                                <li>Deployed A/B tests to evaluate pricing and promotion strategies, improving average order value by 15%</li>
+                                <li>Developed time series models (ARIMA, Prophet) to forecast stock prices and market trends, enhancing investment decision-making processes</li>
+                                <li>Automated real-time dashboards using Python Dash and MongoDB, updating financial indicators every 5 minutes</li>
+                                <li>Exposed clean REST APIs for integration with trading bots and external analytics tools</li>
+                                <li>Designed scalable FastAPI backends for ML model inference and analytics workflows</li>
+                                <li>Implemented CI/CD pipelines for automated testing, deployment, and containerized delivery via Docker</li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="project-list">
-                        <li>Developed a web-based dashboard using <span class="skill-highlight">Python</span>, <span class="skill-highlight">Dash</span>, and <span class="skill-highlight">Flask</span> to provide real-time stock market insights.</li>
-                        <li>Integrated <span class="skill-highlight">MongoDB</span> for efficient data storage and <span class="skill-highlight">Power BI</span> for advanced reporting.</li>
-                        <li>Implemented automated 5-minute data updates and moving averages, enabling timely market insights.</li>
-                        <li>Exposed <span class="skill-highlight">REST API</span> endpoints for seamless data access, facilitating integration with external tools.</li>
-                    </ul>
-                </div>
-            </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Co-Founder & Director</div>
+                                <div class="company">Bokan Logistics</div>
+                            </div>
+                            <div class="duration">Aug 2019 - Present</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Led strategic planning and day-to-day operations to scale logistics services, resulting in increased annual revenue</li>
+                                <li>Designed and implemented real-time data dashboards for tracking deliveries, customer satisfaction, and fleet efficiency</li>
+                                <li>Leveraged analytics to optimize delivery routes, warehouse operations, and cost structures</li>
+                                <li>Managed cross-functional teams, overseeing hiring, performance reviews, and daily workflow coordination for over 10 staff</li>
+                                <li>Built long-term client relationships and negotiated contracts expanding market reach and recurring revenue streams</li>
+                                <li>Integrated digital tools (CRM, inventory management systems) to streamline workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Key Projects</h2>
+                    
+                    <div class="project-item">
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">Trend Analyzer</h3>
+                        <p>Developed a production-ready analytics web application with Next.js 15 + React 19 frontend and FastAPI microservices backend. Engineered microservice architecture with advanced security features including rate limiting, JWT authentication, and CORS protection.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/timothykimutai/trend-analyzer" class="project-link">
+                                <i class="fab fa-github"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">E-Commerce Analytics Platform</h3>
+                        <p>Comprehensive analytics platform using Python, FastAPI, and Streamlit. Implemented customer segmentation using RFM analysis and K-means clustering, with real-time data processing pipeline and Shopify integration.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/timothykimutai/E-Commerce-Analytics-Project" class="project-link">
+                                <i class="fab fa-github"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">Customer Churn Prediction</h3>
+                        <p>Built end-to-end ML pipeline to predict telecom customer churn with 87% AUC-ROC. Deployed XGBoost model using FastAPI and built interactive Streamlit dashboard with automated model monitoring.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/timothykimutai/customer-churn-prediction" class="project-link">
+                                <i class="fab fa-github"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">Automated Financial Insights Dashboard</h3>
+                        <p>Web-based dashboard using Python, Dash, and Flask for real-time stock market insights. Integrated MongoDB for data storage with automated 5-minute updates and REST API endpoints for external integration.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/timothykimutai/Automated-Financial-Insights-Dashboard" class="project-link">
+                                <i class="fab fa-github"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
+
+    <button class="print-button" onclick="window.print()" title="Print Resume">
+        <i class="fas fa-print"></i>
+    </button>
+
+    <script>
+        // Add smooth scrolling and dynamic effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill tags on scroll
+            const skillTags = document.querySelectorAll('.skill-tag');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                    }
+                });
+            }, observerOptions);
+            
+            skillTags.forEach(tag => {
+                observer.observe(tag);
+            });
+            
+            // Add hover effects to experience items
+            const experienceItems = document.querySelectorAll('.experience-item, .project-item');
+            experienceItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.borderLeftColor = '#e74c3c';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.borderLeftColor = '#3498db';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
